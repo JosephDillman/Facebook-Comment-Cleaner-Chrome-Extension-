@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Facebook Comment Cleaner",
+    "version": "0.1.1",
+    "author": "Joseph Dillman",
+    "permissions": ["storage"],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.facebook.com/*"],
+            "js": ["content.js"],
+            "css": ["animate.css"]
+        }
+    ],
+    "browser_action": {
+        "default_popup": "interact.html",
+        "default_icon": "logo128.png"
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html id="grad1">
+    <head> 
+        <link rel="stylesheet" href="w3schools.css">
+        <style>
+            @font-face { font-family: Days; src: url('Days.ttf'); } 
+            #grad1 {
+                height: 445px;
+                background-color: rgb(231, 251, 255); /* For browsers that do not support gradients */
+                background: linear-gradient(to bottom right,rgb(171, 255, 200), rgb(168, 239, 255));
+            }
+            body {
+                width: 370px;
+                color: rgb(75, 75, 75);
+                line-height: 24pt;
+                font-size: 11pt;
+            }
+            div {
+                padding-left: 10px;
+                padding-bottom: 10px;
+                padding-right: 10px;
+            }
+            h1 {
+                font-family: Days;
+                color: rgb(51, 53, 211);
+            }
+            h2 {
+                color: rgb(75, 75, 75);
+                line-height: 0pt;
+            }
+            hr {
+                margin-top: 20pt;
+                margin-bottom: 20pt;
+            }
+        </style>
+    </head>
+    <div>
+        <div style="margin-left: 27px;">
+            <div class="title">
+                <span class="facebook">facebook*</span>
+                <h1>COMMENT</h1>
+                <h1 style="padding-left: 25px;padding-top: 4px;">CLEANER</h1>
+            </div>
+            <div style="display: inline-block;">
+                <img class="logo" src="logo.png" alt="logo">
+            </div>
+        </div>
+        <body> 
+            <h2 style="margin-top:0px;">Cleaning Method</h2>
+
+            <label>Automatically Clean Comments</label>
+            <label class="switch">
+                <input type="checkbox" id="autoDelete" checked>
+                <span class="slider round"></span>
+            </label>
+
+            <br>
+            <span>Manual Clean (alt+x)</span>
+            <button class="button cleanButton" id="deleteComments">Clean</button>
+            <br>
+            <span>Manual Restore (alt+z)</span>
+            <button class="button restoreButton" id="restoreComments">Restore</button>
+            <hr>
+
+            <h2 style="margin-top:10px">Cleaning Settings</h2>
+            <span>Clean comments with</span>
+            <span id="output" class="percent"></span>
+            </span>% or more tagged friends</span>
+            <div style="text-align: center;line-height: 0px;">
+                <input type="range" class="rslider" id="percentSlider" min="0" max="100" value="0" step="10">
+            </div>
+            <span>Clean comments with</span>
+            <input type="number" class="minWords" id="minWords" min="0" max="200" value="0">
+            <span>or fewer words</span>
+            <div class="tooltip">
+                    <img class="toolTipIcon" src="tooltip.png">
+                    <span class="tooltiptext">
+                        Automatic Cleaning:
+                        <br>
+                        Immediately clean comments defined in
+                        settings and repeatedly clean whenever a new comment loads 
+                        in the page.
+                        <br><br>
+                        Manual Cleaning:
+                        <br>
+                        Clean/restore all comments currently in
+                        the page according to settings via buttons or hotkeys 
+                        (can be used during automatic mode).
+                        <br><br>
+                        Settings Example (using values 50% and 5):
+                        <br>
+                        Clean all comments where
+                        50% or more of the comment consists of tagged friends, or
+                        all comments containing 5 or fewer words (tagged friends
+                        will not count as words). 
+                    </span>
+            </div>
+            <script src="interact.js"></script>
+        </body>
+    </div>
+</html>
