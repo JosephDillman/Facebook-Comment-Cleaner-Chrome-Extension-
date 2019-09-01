@@ -1,7 +1,3 @@
-
-Chrome Store link: https://chrome.google.com/webstore/detail/facebook-comment-cleaner/anjhgljmglhdjihjfbjlmelghebclioo
-
-
 # Facebook-Comment-Cleaner-(Chrome-Extension)
 
 The Facebook Comment Cleaner allows users to cleanse their newsfeed by hiding comments which primarily contain tagged friends or contain few words. This makes funny/interesting/useful comments easier to identify, especially in comment sections where sorting by relevance is not an option. The "cleaning" process may be accomplished in the following ways.
@@ -15,6 +11,20 @@ Users may use buttons in the menu or hotkeys (alt+x, alt+z) to clean comments or
 ### Install from Chrome Store
 https://chrome.google.com/webstore/detail/facebook-comment-cleaner/anjhgljmglhdjihjfbjlmelghebclioo
 
-### File Break Down 
+### Important Files
+## content.js
+  - Loading preferences from chrome storage
+  - Locating and hiding comments based on preferences
+  - Hotkey functions
+  - DOM observation for reacting to newly loaded comments
+ 
+ ## interact.js
+  - Slider, buttons, other inputs logic
+  - Storing preferances to chrome storage
+  - Message passing to content.js
+  
+ ## interact.html
+  - popup window for extension
+  
 
 
