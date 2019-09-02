@@ -48,6 +48,7 @@ if (performance.navigation.type == 1) {
             changeComments("del");
             iconRed(true); // set theme red
         }else{
+            changeComments("restore");
             iconRed(false); // set theme blue
         }
     });
@@ -159,6 +160,7 @@ function checkVars() {
                 changeComments("del");
                 iconRed(true); // set theme red
             }else{
+                changeComments("restore");
                 iconRed(false); // set theme blue
             };
         });
