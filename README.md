@@ -1,5 +1,5 @@
 # Facebook-Comment-Cleaner-(Chrome-Extension)
-![header](https://imgur.com/av8LGzJ)
+![header](https://i.imgur.com/av8LGzJ.png)
 
 The Facebook Comment Cleaner allows users to cleanse their newsfeed by hiding comments which primarily contain tagged friends or contain few words. This makes funny/interesting/useful comments easier to identify, especially in comment sections where sorting by relevance is not an option. The "cleaning" process may be accomplished in the following ways.
 
