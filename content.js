@@ -106,6 +106,7 @@ document.onkeyup = function(e) {
 
 // Delete/restore comments based on settings
 function changeComments(option) {
+    checkVars();
     if (option == "del") {
         console.log("Deleting comments with autoDelete: " + autoDelete +   ", percent: " + percent + ", minWords: " + minWords);
     }else if (option == "restore") {
@@ -137,7 +138,7 @@ function changeComments(option) {
         // console.log(aTotal/(aTotal + spanTotal), comment.innerText);
 
         // act on comment if it fulfills settings criteria
-        if (aTotal/(aTotal + spanTotal)*100 >= parseInt(percent) ||             spanWordLength <= parseInt(minWords)) {
+        if (aTotal/(aTotal + spanTotal)*100 >= parseInt(percent) || spanWordLength <= parseInt(minWords)) {
             divSection = comment.closest("li");
             if (option === "del") {
                 slideOut(divSection);
@@ -146,6 +147,22 @@ function changeComments(option) {
             }
         }
     }
+}
+
+function checkVars() {
+    if (typeof percent == "undefined" || typeof minWords == "undefined" || typeof autoDelete == "undefined") {
+        chrome.storage.sync.get(function(data) {
+            percent = data.percent;
+            autoDelete = data.autoDelete;
+            minWords = data.minWords;
+            if (autoDelete) {
+                changeComments("del");
+                iconRed(true); // set theme red
+            }else{
+                iconRed(false); // set theme blue
+            };
+        });
+    };
 }
 
 // Delete/restore animations
