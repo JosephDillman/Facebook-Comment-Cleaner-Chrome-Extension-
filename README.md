@@ -14,7 +14,7 @@ Users may use buttons in the menu or hotkeys (alt+x, alt+z) to clean comments or
 ### Install from Chrome Store
 https://chrome.google.com/webstore/detail/facebook-comment-cleaner/anjhgljmglhdjihjfbjlmelghebclioo
 
-### Important Files
+### Notable Files
 ## content.js
   - Loading preferences from chrome storage
   - Locating and hiding comments based on preferences
