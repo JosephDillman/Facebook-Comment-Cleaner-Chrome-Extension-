@@ -5,7 +5,7 @@
   margin-top: 20px;
 }
 
-.facebook {
+.facebok {
   font-weight: bold;
   color: #797979;
 }
@@ -30,6 +30,7 @@
     width: 38px;
     font-size:12pt;
     font-weight: bold;
+    text-align: center;
     color:#2196F3;
     background-color: rgb(255, 255, 255, 0);
     border-top-color: rgb(255, 255, 255, 0);
@@ -48,7 +49,7 @@
 .tooltip {
   position: relative;
   display: inline-block;
-  margin-left: 160px;
+  margin-left: 155px;
 }
 
 .tooltip .tooltiptext {
