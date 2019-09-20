@@ -12,8 +12,7 @@ Users may use buttons in the menu or hotkeys (alt+x, alt+z) to clean comments or
 ![demo](https://github.com/JosephDillman/Facebook-Comment-Cleaner-Chrome-Extension-/blob/master/screenshots/Showoff3%20(1).gif?raw=true)
 
 ### Install from Chrome Store
-*** right now my chrome extension got taken down for the use of the word "Facebook" (ugh) so it may be a few days before this comes back up ***
-https://chrome.google.com/webstore/detail/facebook-comment-cleaner/anjhgljmglhdjihjfbjlmelghebclioo
+https://chrome.google.com/webstore/detail/comment-cleaner-for-faceb/pdhglmnoadkhiboabiajojcaidikpnfl
 
 ### Notable Files
 ## content.js
