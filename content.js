@@ -39,7 +39,7 @@ var percent;
 var autoDelete;
 var minWords;
 var paused = false;
-if (performance.navigation.type == 1) {
+function go() {
     chrome.storage.sync.get(function(data) {
         percent = data.percent;
         autoDelete = data.autoDelete;
@@ -56,6 +56,7 @@ if (performance.navigation.type == 1) {
     var paused = true;
     setTimeout(function(){ paused = false}, 3000);
 }
+go();
 
 // If the news feed updates (but not refresh), remove comments (if autoDelete on)
 var feed = document.querySelectorAll("[role=feed]")[0];

@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Comment Cleaner for Facebook\u2122",
     "description": "Remove comments that are primarily tagged friends or short in content!",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "author": "Joseph Dillman",
     "permissions": ["storage"],
     "background": {
