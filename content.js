@@ -39,6 +39,7 @@ var percent;
 var autoDelete;
 var minWords;
 var paused = false;
+
 function go() {
     chrome.storage.sync.get(function(data) {
         percent = data.percent;
@@ -117,6 +118,47 @@ function changeComments(option) {
     // select all comments by class, then parse through comment and tagged friends
     // portion, represented by <span> or <a> tag
     var l = document.querySelectorAll("span._3l3x");
+    if (l.length == 0) {
+        // New facebook UI involves new tags 
+        l = document.querySelectorAll("div[aria-label*='Comment by '], div[aria-label*='Reply by ']");
+        var i;
+        for (i = 0; i<l.length; i++) {
+            var comment = l[i];
+            var spanWordLength = 0;
+            var aTotal = 0;
+            var tTotal = 0;
+
+            // tagged/non-tagged comments are described in this list
+            var commentParent = comment.querySelectorAll("div[dir='auto']")[0].childNodes;
+            var j;
+            for (j = 0; j < commentParent.length; j++){
+                elem = commentParent[j]
+                if (elem.nodeName == "A") {
+                    // tagged friend
+                    aTotal += elem.innerText.length;
+                } else if (elem.nodeName == "#text" && elem.textContent.trim() != "") {
+                    // non tagged friend text and not whitespace
+                    spanWordLength += elem.textContent.trim().split(" ").length;
+                    tTotal += elem.textContent.trim().length;
+                }
+            }
+
+            // console.log(aTotal/(aTotal + spanTotal), comment.innerText);
+
+            // act on comment if it fulfills settings criteria
+            if (aTotal/(aTotal + tTotal)*100 >= parseInt(percent) || spanWordLength <= parseInt(minWords)) {
+                divSection = comment.closest("li");
+                if (option === "del") {
+                    slideOut(divSection);
+                }else{
+                    slideIn(divSection);
+                }
+            }
+        }
+        return
+    }
+
+    // old facebook UI 
     var i;
     for (i = 0; i<l.length; i++){
         var comment = l[i];
